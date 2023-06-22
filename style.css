@@ -1,0 +1,61 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #332B47;
+    color: #E5E6B3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;    
+}
+
+.container{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#home{
+    background-color: #A5A8B4;
+    padding: 10px;
+    text-align: center;
+}
+
+#home a{
+    color: #E5E6B3;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#home a:hover{
+    background-color: #bbbecd;
+    color: #E5E6B3;
+}
+
+h1{
+    text-align: center;
+}
+
+#texto-motivacional{
+    padding: 5px;
+}
+
+.img-carro img{
+    max-width: 100%;
+    height: auto;
+}
+
+.titulo-motivos{
+    font-weight: bold;
+}
+
+.reasons{
+    line-height: 30px;
+}
+
+#contato{
+    background-color: #A5A8B4;
+    padding: 10px;
+    text-align: center;
+}
