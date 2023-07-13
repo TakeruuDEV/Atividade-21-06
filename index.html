@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Atividade Kick com JS</title>
-    </head>
-    <body>
-        <div id="resp">
-            <h1>Calcule seu IMC</h1>
-            <label>Peso:</label>
-            <input type="number" placeholder="Digite seu peso em kg:" id="peso">
-            <br>
-            <label>Sua altura em metros e centimetros, exemplo: 1.74</label>
-            <input type="number" placeholder="Digite sua altura:" id="altura">
-            <button id="btn" onclick="imc()">Calcular</button>
-        </div>
-    </body>
+<html>
+<head>
+    <title>Cálculo de Média - Kick</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo de Média - Kick</h1>
+        <p>Insira as três notas:</p>
+        <input type="number" id="n1">
+        <input type="number" id="n2">
+        <input type="number" id="n3">
+        <button onclick="calcularMedia()">Calcular Média</button>
+        <p id="resultado"></p>
+    </div>
 
     <script>
-        function imc(){
-            var peso = document.getElementById("peso").value;
-            var altura = document.getElementById("altura").value;
-            var altura = altura * altura;
-            var imc = peso / altura;
-            var div = document.getElementById("resp");
-            div.innerHTML = "<h2>Seu IMC é de "+ imc+"</h2>";
-        } 
+        function calcularMedia() {
+            var n1 = parseFloat(document.getElementById("n1").value);
+            var n2 = parseFloat(document.getElementById("n2").value);
+            var n3 = parseFloat(document.getElementById("n3").value);
+            var media = (n1 + n2 + n3) / 3;
+            if (media >= 6) {
+                document.getElementById("resultado").innerHTML = "Parabéns, você passou! Sua média é " + media.toFixed(2);
+            } else {
+                document.getElementById("resultado").innerHTML = "Infelizmente, você não passou. Sua média é " + media.toFixed(2);
+            }
+        }
     </script>
+</body>
 </html>
