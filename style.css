@@ -1,38 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-#resp {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-top: 20px;
-}
-
-input[type="number"] {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-}
-
-@media (min-width: 600px) {
-    label, input[type="number"] {
-        display: inline-block;
-        width: auto;
-        margin-right: 10px;
-    }
-}
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input[type="number"] {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        @media (min-width: 600px) {
+            input[type="number"] {
+                width: calc(33.33% - 20px);
+                margin-right: 10px;
+                display: inline-block;
+            }
+        }
