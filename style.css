@@ -1,21 +1,25 @@
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        input[type="number"] {
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 10px;
-        }
-        @media (min-width: 600px) {
-            input[type="number"] {
-                width: calc(33.33% - 20px);
-                margin-right: 10px;
-                display: inline-block;
-            }
-        }
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+input {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+button {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #00a0ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.error {
+    color: red;
+    font-weight: bold;
+}
