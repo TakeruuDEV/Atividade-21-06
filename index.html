@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cálculo de Média - Kick</title>
+    <title>Formulário de cadastro - Kick</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <h1>Cálculo de Média - Kick</h1>
-        <p>Insira as três notas:</p>
-        <input type="number" id="n1">
-        <input type="number" id="n2">
-        <input type="number" id="n3">
-        <button onclick="calcularMedia()">Calcular Média</button>
-        <p id="resultado"></p>
-    </div>
-
+    <body>
+    <form id="form">
+        <h1>Formulário de cadastro</h1>
+        <input type="text" id="name" placeholder="Nome" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <input type="password" id="confirm" placeholder="Confirmar senha" required>
+        <button type="submit">Enviar</button>
+        <p id="message" class="error"></p>
+    </form>
     <script>
-        function calcularMedia() {
-            var n1 = parseFloat(document.getElementById("n1").value);
-            var n2 = parseFloat(document.getElementById("n2").value);
-            var n3 = parseFloat(document.getElementById("n3").value);
-            var media = (n1 + n2 + n3) / 3;
-            if (media >= 6) {
-                document.getElementById("resultado").innerHTML = "Parabéns, você passou! Sua média é " + media.toFixed(2);
-            } else {
-                document.getElementById("resultado").innerHTML = "Infelizmente, você não passou. Sua média é " + media.toFixed(2);
+        var form = document.getElementById("form");
+        var name = document.getElementById("name");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var confirm = document.getElementById("confirm");
+        var message = document.getElementById("message");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            message.textContent = "";
+
+            if (name.value === "" || email.value === "" || password.value === "" || confirm.value === "") {
+                message.textContent = "Por favor, preencha todos os campos.";
+                return;
             }
-        }
+
+            if (password.value !== confirm.value) {
+                message.textContent = "As senhas não coincidem.";
+                return;
+            }
+
+            form.submit();
+        });
     </script>
-</body>
+    </body>
+
 </html>
