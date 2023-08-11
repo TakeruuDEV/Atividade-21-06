@@ -1,53 +1,28 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
 }
-  
-h1 {
-    text-align: center;
+
+.carousel {
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
 }
-  
-form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
 }
-  
-label,input,button {
-    display: block;
-    margin-bottom: 10px;
+
+.carousel-slide {
+    flex: 0 0 100%;
 }
-  
-label {
-    font-weight: bold;
-}
-  
-input[type="text"],input[type="email"] {
+
+img {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-  
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-  
-button:hover {
-    background-color: #45a049;
-}
-  
-@media (max-width: 600px) {
-    form {
-      max-width: 90%;
-    }
+    height: auto;
 }
