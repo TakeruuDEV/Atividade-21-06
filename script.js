@@ -1,29 +1,22 @@
-function cadastrarUsuario() {
-    const nome = document.getElementById('nome').value;
-    const sobrenome = document.getElementById('sobrenome').value;
-    const email = document.getElementById('email').value;
-    const cep = document.getElementById('cep').value;
-  
-    fetch(`https://viacep.com.br/ws/${cep}/json/`)
-      .then(response => response.json())
-      .then(data => preencherEndereco(data));
+const carouselContainer = document.querySelector('.carousel-container');
+const slides = document.querySelectorAll('.carousel-slide');
+
+let currentIndex = 0;
+
+function showSlide(index) {
+    carouselContainer.style.transform = `translateX(-${index * 100}%)`;
 }
-  
-function preencherEndereco(data) {
-    document.getElementById('rua').value = data.logradouro;
-    document.getElementById('bairro').value = data.bairro;
-    document.getElementById('cidade').value = data.localidade;
-    document.getElementById('estado').value = data.uf;
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
 }
-  
-document.getElementById('cadastroForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    cadastrarUsuario();
-});
-  
-document.getElementById('cep').addEventListener('input', function(event) {
-    const cep = event.target.value.replace(/\D/g, '');
-    if (cep.length === 8) {
-      cadastrarUsuario();
-    }
-});  
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
+
+setInterval(nextSlide, 5000);
+
+showSlide(currentIndex);
