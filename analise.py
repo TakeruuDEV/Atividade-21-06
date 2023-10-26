@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("planilha.xlsx")
+df = pd.read_csv("tabela_alunos.xlsx")
 
 print(df.head())
 
